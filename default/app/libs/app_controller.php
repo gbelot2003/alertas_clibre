@@ -19,12 +19,21 @@ class AppController extends Controller
 
     final protected function initialize()
     {
+        $this->siteTitle = NULL; 
+        $this->navbar = true;
+        $this->reportesBar = NULL;
+        $this->estadisticas = NULL;
+    	// Instancias de clases para menu
+    	$this->inicio = NULL; // index_controller
+        $this->reportes = NULL;
+        $this->rep_menu = NULL; // menu en reportes_controller 
 
+        View::template('bootstrap');
     }
 
     final protected function finalize()
     {
-        
+
     }
 
 }

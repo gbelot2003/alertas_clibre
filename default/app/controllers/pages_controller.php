@@ -41,4 +41,30 @@ class PagesController extends AppController
 	{
 		View::select(implode('/', $this->parameters));
 	}
+
+	public function login(){
+
+        $this->navbar = NULL;
+		$this->title = "Login de Sistema";
+		
+		if(Input::hasPost("usuario", "pass")):
+			$user = Input::Post('usuario');
+			$pw   = Input::Post('pw');
+			$pws  = md5($pw);
+			$auth = new Auth("model", "class: usuarios", "usuario: $user", "pass: $pws");
+			if($auth->authenticate()):
+				//Punto de helper
+				Router::redirect("dashbord/");
+			else:
+				Flash::error("<strong>Warning!</strong>");
+			endif;
+		endif;		
+	}
+
+    public function salir(){
+        Auth::destroy_identity();
+        //punto de helper
+        Router::redirect("/");
+    }
+
 }

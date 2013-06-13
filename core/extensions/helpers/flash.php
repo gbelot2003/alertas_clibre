@@ -37,8 +37,8 @@ class Flash
     /**
      * Visualiza un mensaje flash
      *
-     * @param string $name	Para tipo de mensaje y para CSS class='$name'.
-     * @param string $text 	Mensaje a mostrar
+     * @param string $name  Para tipo de mensaje y para CSS class='$name'.
+     * @param string $text  Mensaje a mostrar
      */
     public static function show($name, $text)
     {
@@ -56,7 +56,10 @@ class Flash
      */
     public static function error($text)
     {
-        return self::show('error', $text);
+        $btn = "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+        $btn .= "<h4>Error !!</h4>";
+        $btn .= $text;
+        return self::show('alert  alert-block alert-error', $btn);
     }
 
     /**
@@ -66,7 +69,10 @@ class Flash
      */
     public static function warning($text)
     {
-        return self::show('warning', $text);
+        $btn = "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+        $btn .= "<h4>Advetencia !!</h4>";
+        $btn .= $text;
+        return self::show('alert alert-block alert-success', $btn);
     }
 
     /**
@@ -76,7 +82,10 @@ class Flash
      */
     public static function info($text)
     {
-        return self::show('info', $text);
+        $btn = "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+        $btn .= "<h4>Atencion !!</h4>";
+        $btn .= $text;
+        return self::show('alert alert-info  alert-block', $btn);
     }
 
     /**
@@ -86,7 +95,10 @@ class Flash
      */
     public static function valid($text)
     {
-        return self::show('valid', $text);
+        $btn = "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+        $btn .= "<h4>Todo Correcto !!</h4>";
+        $btn .= $text;
+        return self::show('alert alert-success alert-block', $btn);
     }
 
     /**
@@ -98,7 +110,9 @@ class Flash
      */
     public static function notice($text)
     {
-        return self::show('info', $text);
+        $btn = "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+        $btn .= $text;
+        return self::show('alert alert-block  alert-block', $btn);
     }
 
     /**
@@ -110,7 +124,10 @@ class Flash
      */
     public static function success($text)
     {
-        return self::show('valid', $text);
+        $btn  = "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+        $btn .= "<h4>Accion Completada !!</h4>";
+        $btn .= $text;
+        return self::show('alert alert-success  alert-block', $btn);
     }
 
 }
