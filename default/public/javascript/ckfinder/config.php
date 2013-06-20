@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*
  * ### CKFinder : Configuration File - Basic Instructions
  *
@@ -30,7 +31,8 @@ function CheckAuthentication()
 	// user logs in your system. To be able to use session variables don't
 	// forget to add session_start() at the top of this file.
 
-	return true;
+	$is_valid = isset($_SESSION['KUMBIA_AUTH_VALID']['default']) ? $_SESSION['KUMBIA_AUTH_VALID']['default'] : FALSE;
+	return $is_valid;
 }
 
 // LicenseKey : Paste your license key here. If left blank, CKFinder will be
