@@ -1,9 +1,11 @@
+<?php if ($id == NULL): ?>
+
+
 <?php echo Tag::js('jquery.dataTables')?>
 <?php echo Tag::js('TableTools')?>
 <?php echo Tag::js('ZeroClipboard')?>
 <?php echo Tag::js('reportes/alertas.tablas')?>
 
-<?php if ($id == NULL): ?>
 <?php
 $resultado = 0;
 	foreach($model as $model2):

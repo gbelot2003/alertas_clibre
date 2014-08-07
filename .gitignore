@@ -1,6 +1,7 @@
 core
 app/config/config.ini
-app/config/darabase.ini
+app/config/database.ini
+public/img/graficas
 public/javascript/ckeditor
 public/javascript/ckfinder
 kthemes.sublime-project

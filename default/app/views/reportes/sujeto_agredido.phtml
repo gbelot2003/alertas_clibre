@@ -1,9 +1,10 @@
+<?php if ($id == null): ?>
+
 <?php echo Tag::js('jquery.dataTables')?>
 <?php echo Tag::js('TableTools')?>
 <?php echo Tag::js('ZeroClipboard')?>
 <?php echo Tag::js('reportes/alertas.tablas')?>
 
-<?php if ($id == null): ?>
 <?php
 	$resultado = 0;
 	foreach($model as $model2):
@@ -55,11 +56,11 @@
 			$chart->setDataSet($dataSet);
 			$chart->getPlot()->setGraphPadding(new Padding(5, 30, 20, 180));
 			$chart->setTitle("$title del año $anios ");
-			$chart->render($localpath.'/img/graficas/$action_name-$anios.png');
+			$chart->render($localpath."/img/graficas/$action_name-$anios.png");
 	 	?>
 			<div class="span11">
 				<?php //print html::img('graficas/$action_name-$anios.png') ?>
-				<?php Print Html::link("img/graficas/$action_name-$anios.png", html::img('graficas/$action_name-$anios.png')) ?>
+				<?php Print Html::link("img/graficas/$action_name-$anios.png", html::img("graficas/$action_name-$anios.png")) ?>
 			</div>
 
 		<?php

@@ -28,7 +28,6 @@ class ReportesController extends AppController
 		$this->rep_menu = array();
 		$this->posTilte = array();
 
-
 	}
 
 	public function index($anios = NULL, $id = NULL)
