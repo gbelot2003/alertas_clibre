@@ -27,6 +27,9 @@ class AppController extends Controller
     	$this->inicio = NULL; // index_controller
         $this->reportes = NULL;
         $this->rep_menu = NULL; // menu en reportes_controller 
+        //$this->localpath = "/home/ajax/www/ktheme/default/public"; //generar ruta de graficas de informe
+        //$this->localpath = 'C:\xampp\htdocs\ktheme\default\public'; //generar informes
+        $this->localpath = "/home/ajax/www/alertas_clibre/default/public";
 
         View::template('bootstrap');
     }

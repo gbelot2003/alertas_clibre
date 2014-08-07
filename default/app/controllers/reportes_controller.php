@@ -20,8 +20,6 @@ class ReportesController extends AppController
 		$this->reportes = "Class='active'";
     	$this->sidebar = true;
 		$this->reportesBar = TRUE;
-		$this->localpath = "/home/ajax/www/ktheme/default/public"; //generar ruta de graficas de informe
-		//$this->localpath = 'C:\xampp\htdocs\ktheme\default\public'; //generar informes
 		$this->anio_actual = Load::model('alertas')->find_first("order: anio DESC", "conditions: publicada_id = 1");
 		$this->i = 1;
 		$this->action_paht = $this->controller_name ."/".$this->action_name;
